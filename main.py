@@ -1,16 +1,20 @@
-# This is a sample Python script.
+def binary_serch (list, item):
+    low = 0
+    high = len(list)-1
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    while low <= high:
+        mid = int((low + high)/2)
+        guess = list[mid]
+        if guess == item:
+            return mid
+        if guess > item:
+          high = mid - 1
+        else:
+            low = mid + 1
+    return None
+
+my_list = [1, 3, 5, 7, 9]
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print (binary_serch(my_list, 5))
+print (binary_serch(my_list, -1))
